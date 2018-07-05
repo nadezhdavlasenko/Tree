@@ -1,4 +1,3 @@
-
 class Leaf {
     private enum LeafColor {GREEN, YELLOW}
     private LeafColor color;
@@ -23,7 +22,7 @@ class Leaf {
     @Override
     public int hashCode(){
         int result = 17;
-
+        result = 31 * result + ((color == null) ? 0 : color.hashCode());
         return result;
     }
 }

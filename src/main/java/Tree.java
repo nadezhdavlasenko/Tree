@@ -31,5 +31,12 @@ public class Tree {
         resultString.append("}");
         return resultString.toString();
     }
+    @Override
+    public int hashCode(){
+        int result = 17;
+        result = 31 * result + ((state == null) ? 0 : state.hashCode());
+        result = 31 * result + ((leaves == null) ? 0 : leaves.hashCode());
+        return result;
+    }
 }
 

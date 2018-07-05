@@ -1,5 +1,4 @@
 import java.util.ArrayList;
-import lombok.Setter;
 
 public enum State {
 
@@ -12,6 +11,7 @@ public enum State {
                 leafList.add(new Leaf());
             }
             tree.setLeaves(leafList);
+            System.out.println(this);
             System.out.println(tree);
             return BLOOM;
         }
@@ -19,6 +19,7 @@ public enum State {
     BLOOM {
         @Override
         State doNext(Tree tree) {
+            System.out.println(this);
             System.out.println("Tree blooms");
             return YELLOWING;
         }
@@ -47,6 +48,7 @@ public enum State {
     FROSTED {
         @Override
         State doNext(Tree tree) {
+            System.out.println(this);
             System.out.println("Tree is frosted");
             return NEW;
         }
