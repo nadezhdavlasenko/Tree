@@ -38,7 +38,8 @@ public class Main {
         System.out.println(tree1 + ", " + tree2);
         testTree(tree1, tree2);
 
-        for (int i = (int) (Math.random()*5+1); i > 0; i--) {
+        //for (int i = 3; i > 0; i--) {
+        for (int i = (int) (Math.random()*5+2); i > 0; i--) {
             tree1.changeState();
             tree2.changeState();
         }

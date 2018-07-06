@@ -4,7 +4,6 @@ import java.util.ArrayList;
 
 
 public class Tree {
-
     private State state;
     @Setter @Getter
     private ArrayList<Leaf> leaves = new ArrayList<>();
@@ -12,7 +11,8 @@ public class Tree {
     public Tree(){
         state = State.NEW;
     }
-    public void changeState() { state = state.doNext(this);
+    public void changeState() {
+        state = state.doNext(this);
     }
     @Override
     public boolean equals(Object o) {

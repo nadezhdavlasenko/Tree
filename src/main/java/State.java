@@ -1,13 +1,13 @@
 import java.util.ArrayList;
 
 public enum State {
-
     NEW {
         @Override
         State doNext(Tree tree) {
             ArrayList<Leaf> leafList = new ArrayList();
+            //int leavesAmount= 7;
             int leavesAmount= (int) (Math.random()*9+1);
-            while (0 <= leavesAmount--){
+            while (0 < leavesAmount--){
                 leafList.add(new Leaf());
             }
             tree.setLeaves(leafList);
