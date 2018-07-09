@@ -16,13 +16,13 @@ class Leaf {
         return ((Leaf) o).color == this.color;
     }
     @Override
-    public String toString(){
-        return (this.color + " leaf").toLowerCase();
-    }
-    @Override
     public int hashCode(){
         int result = 17;
         result = 31 * result + ((color == null) ? 0 : color.hashCode());
         return result;
+    }
+    @Override
+    public String toString(){
+        return (this.color + " leaf").toLowerCase();
     }
 }

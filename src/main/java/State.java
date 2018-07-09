@@ -5,22 +5,20 @@ public enum State {
         @Override
         State doNext(Tree tree) {
             ArrayList<Leaf> leafList = new ArrayList();
-            //int leavesAmount= 7;
-            int leavesAmount= (int) (Math.random()*9+1);
+            int leavesAmount= 7;
+            //int leavesAmount= (int) (Math.random()*9+1);
             while (0 < leavesAmount--){
                 leafList.add(new Leaf());
             }
             tree.setLeaves(leafList);
-            System.out.println(this);
-            System.out.println(tree);
+            tree.printState();
             return BLOOM;
         }
     },
     BLOOM {
         @Override
         State doNext(Tree tree) {
-            System.out.println(this);
-            System.out.println("Tree blooms");
+            tree.printState();
             return YELLOWING;
         }
     },
@@ -31,8 +29,7 @@ public enum State {
                     ) {
                 leaf.turnYellow();
             }
-            System.out.println(this);
-            System.out.println(tree);
+            tree.printState();
             return FALLING;
         }
     },
@@ -40,16 +37,14 @@ public enum State {
         @Override
         State doNext(Tree tree) {
             tree.getLeaves().clear();
-            System.out.println(this);
-            System.out.println(tree);
+            tree.printState();
             return FROSTED;
         }
     },
     FROSTED {
         @Override
         State doNext(Tree tree) {
-            System.out.println(this);
-            System.out.println("Tree is frosted");
+            tree.printState();
             return NEW;
         }
     };
